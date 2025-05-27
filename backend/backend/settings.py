@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", 'your-default-insecure-secret')
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['rbm-cleaning.kz', 'www.rbm-cleaning.kz', '195.49.212.63']
 
