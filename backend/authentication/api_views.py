@@ -16,7 +16,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
-# 👉 Регистрация
+# Регистрация
 @api_view(['POST'])
 def register_api(request):
     serializer = RegistrationSerializer(data=request.data)
@@ -32,7 +32,7 @@ def register_api(request):
 
     print("Ошибки валидации:", serializer.errors)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-# 👉 Повторная отправка письма
+# Повторная отправка письма
 @api_view(['POST'])
 def resend_confirmation_email(request):
     email = request.data.get('email')
@@ -65,7 +65,7 @@ def confirm_email_api(request, uidb64, token):
 
 
 
-# 👉 Отправка email подтверждения
+# Отправка email подтверждения
 def send_confirmation_email(user):
     token = default_token_generator.make_token(user)
     uid = urlsafe_base64_encode(force_bytes(user.pk))
@@ -99,7 +99,7 @@ def password_reset_request(request):
 
         send_mail(
             subject="Сброс пароля",
-            message=f"Сброс пароля: {reset_url}",  # на случай, если HTML не поддерживается
+            message=f"Сброс пароля: {reset_url}", 
             from_email=settings.DEFAULT_FROM_EMAIL,
             recipient_list=[user.email],
             html_message=html_message,

@@ -10,6 +10,18 @@ services:
       context: ./frontend
     networks:
       - dev
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: rbm_db
+      MYSQL_USER: rbm_user
+      MYSQL_PASSWORD: rbm_pass
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - dev
 
   nginx:
     image: nginx:stable-alpine

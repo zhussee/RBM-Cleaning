@@ -24,8 +24,8 @@ from backend_company.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Аутентификация и профиль
-    path('api/', include('authentication.urls')),
-    path('api/', include('user.urls')),
+    path('api/auth/', include('authentication.urls')),
+    path('api/user/', include('user.urls')),
 
     # Главная и сервисы
     path('', add_views.service_list, name='home'),
