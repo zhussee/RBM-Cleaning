@@ -54,6 +54,14 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://rbm-cleaning.kz',
+    'https://rbm-cleaning.kz',
+    "https://rbm-cleaning.kz",
+    "http://backend"
+]
+
+
 # REST Framework + JWT
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
