@@ -10,7 +10,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", 'your-default-insecure-secret')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['rbm-cleaning.kz', 'www.rbm-cleaning.kz', '195.49.212.63']
+ALLOWED_HOSTS = ['rbm-cleaning.kz', 'www.rbm-cleaning.kz', '195.49.212.63', 'backend', 'localhost']
 
 
 # Application definition
