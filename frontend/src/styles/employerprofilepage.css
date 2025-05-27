@@ -1,0 +1,22 @@
+.custom-file-upload {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-file-upload label {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 18px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.custom-file-upload label:hover {
+  background-color: #1e40af;
+}
+
+.custom-file-upload input[type="file"] {
+  display: none;
+}

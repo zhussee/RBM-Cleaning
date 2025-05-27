@@ -1,0 +1,213 @@
+.company-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- Заголовок компании --- */
+.company-cart-title {
+  font-size: 34px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* --- Информация о компании --- */
+.company-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.company-left {
+  flex: 1;
+  min-width: 320px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-card {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.company-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.company-rating {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.company-rating img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.company-right {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.company-title {
+  font-size: 26px;
+  margin: 0;
+}
+
+.company-right p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.company-service {
+  background-color: #4489ff;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  width: fit-content;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.company-service:hover {
+  background-color: #2563eb;
+}
+
+/* --- Услуги: карточки сеткой --- */
+.company-services {
+  margin-top: 40px;
+}
+
+.company-services h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.service-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 320px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  margin-bottom: 6px;
+  font-size: 18px;
+  color: #444;
+}
+
+.service-features {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+.service-price {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.service-card button {
+  margin-top: auto;
+  padding: 12px 0;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.service-card button:hover {
+  background-color: #1e4ec9;
+}
+
+/* --- Отзывы --- */
+.reviews-section {
+  margin-top: 50px;
+}
+
+.reviews-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.reviews-list li {
+  background: #f7f7f7;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 16px 20px;
+  font-size: 18px;
+  color: #444;
+}
+
+.reviews-list li strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 18px;
+}

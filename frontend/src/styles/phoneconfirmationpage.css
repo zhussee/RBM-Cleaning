@@ -1,0 +1,80 @@
+.confirm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 125px;
+  background-color: #fff;
+}
+
+.confirm_container {
+  width: 600px;
+  padding: 50px 40px;
+  border: 2px solid #4489ff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.confirm_title {
+  font-size: 44px;
+  margin: 0 auto;
+}
+
+.confirm_text {
+  font-size: 20px;
+  color: #5e5e5e;
+  line-height: 1.4;
+  margin: 0 0 50px;
+}
+
+.confirm_input {
+  width: 400px;
+  height: 35px;
+  padding: 0 12px;
+  border: 1px solid #4489ff;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 0 0 20px;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui !important;
+}
+
+.confirm_button {
+  width: 400px;
+  height: 35px;
+  background-color: #4489ff;
+  color: #fff;
+  border: 2px solid #4489ff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 0 20px;
+  font-family: "Poppins", system-ui !important;
+}
+
+.confirm_button:hover {
+  background-color: #2563eb;
+  border: 2px solid #2563eb;
+  transition: color 0.3s ease;
+}
+.repeat_confirm_button{
+    width: 186px;
+    height: 35px;
+    background-color: #F6F6F6;
+    color: #A0A0A0;
+    border: 2px solid #eeecec;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 0 20px;
+    font-family: "Poppins", system-ui !important;
+}
+.repeat_confirm_button:hover {
+    background-color: #4489ff;
+    border: 2px solid #4489ff;
+    color: #fff;
+    transition: color 0.3s ease;
+}

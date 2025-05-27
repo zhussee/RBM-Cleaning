@@ -1,0 +1,187 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 16px;
+}
+
+.header.scrolled {
+  background-color: #4489FF;
+}
+
+.header.scrolled .nav-link,
+.header.scrolled .language-select,
+.header.scrolled .logout-btn img {
+  color: #fff !important;
+  filter: brightness(0) invert(1);
+}
+
+.header.scrolled .language-select {
+  background-color: transparent;
+}
+
+.header_conteiner {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo img {
+  width: 74px;
+  height: 74px;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 12px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  filter: none;
+  transition: filter 0.3s ease;
+  margin-right: 2px;
+}
+
+/* Ховеры только когда НЕ .scrolled */
+.header:not(.scrolled) .nav-link:hover {
+  background-color: #F4F8FF;
+  color: #4489FF;
+}
+
+.header:not(.scrolled) .nav-link:hover .nav-icon {
+  filter: invert(34%) sepia(77%) saturate(571%) hue-rotate(181deg) brightness(95%) contrast(92%);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.language-select {
+  font-family: "Poppins", system-ui;
+  background: transparent;
+  border: none;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  width: 60px;
+  appearance: none;
+}
+
+.language-select:hover {
+  color: #4489FF;
+  transition: color 0.3s ease;
+}
+
+.language-select option {
+  background-color: #ffffff;
+  color: #4489FF;
+  text-align: center;
+}
+
+.language-select:focus {
+  outline: none;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn,
+.register-btn,
+.profile-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-btn {
+  background-color: #fff;
+  color: #4489ff;
+  border: 1px solid #d1d5db;
+}
+
+.login-btn:hover {
+  background-color: #f3f4f6;
+  color: #2563eb;
+}
+
+.register-btn {
+  background-color: #4489ff;
+  color: #fff;
+  border: none;
+}
+
+.register-btn:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.profile-button {
+  background-color: #4489ff;
+  color: #fff;
+  border: none;
+}
+
+.profile-button:hover {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.header.scrolled .profile-button,
+.header.scrolled .register-btn {
+  background-color: #fff;
+  color: #4489FF;
+  border: 1px solid #fff;
+}
+
+.header.scrolled .register-btn:hover,
+.header.scrolled .profile-button:hover {
+  background-color: #f0f0f0;
+  color: #2563eb;
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* между логотипом и меню */
+}

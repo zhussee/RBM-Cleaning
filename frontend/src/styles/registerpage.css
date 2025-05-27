@@ -1,0 +1,139 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+  background-color: #fff;
+}
+
+.register_container {
+  width: 600px;
+  padding: 50px 40px;
+  border: 2px solid #4489ff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register_title {
+  font-size: 44px;
+  margin: auto;
+}
+.error {
+  font-size: 16px;
+  margin: 0;
+}
+.register_subtitle {
+  font-size: 20px;
+  color: #5e5e5e;
+  margin: auto;
+}
+
+.register_form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  width: 100%;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.register_input {
+  width: 400px;
+  height: 35px;
+  padding: 0 12px;
+  border: 1px solid #4489ff;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui !important;
+}
+
+.register_note {
+    width: 380px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4489ff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: auto;
+  text-align: left;
+  
+}
+
+.register_checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  width: 400px;
+}
+
+.register_checkbox {
+  cursor: pointer;
+}
+
+
+.register_button {
+  width: 400px;
+  height: 35px;
+  background-color: #4489ff;
+  color: #fff;
+  border: 2px solid #4489ff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.register_button:hover {
+  background-color: #2563eb;
+}
+
+.register_footer-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #5e5e5e;
+}
+
+.register_footer-btn {
+    width: 400px;
+    height: 35px;
+    background-color: #fff;
+    color: #4489ff;
+    border: 2px solid #4489ff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .register_footer-btn:hover {
+    background-color: #4489ff;
+    color: #fff;
+  }
+  .register_password-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .register_password-wrapper input {
+    width: 100%;
+    padding-right: 40px;
+  }
+  
+  .register_eye-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  

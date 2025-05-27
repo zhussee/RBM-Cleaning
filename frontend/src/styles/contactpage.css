@@ -1,0 +1,78 @@
+.contact-page {
+  font-family: "Poppins", sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.contact-page h1 {
+  font-size: 34px;
+  margin-bottom: 40px;
+  margin-top: 0;
+  font-weight: 700;
+  color: #111827;
+}
+
+.contact-content {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  max-width: 400px;
+  font-size: 18px;
+  color: #111827;
+}
+
+.contact-left p {
+  margin-bottom: 20px;
+}
+
+.contact-left strong {
+  font-weight: 600;
+}
+
+.contact-right {
+  flex: 1;
+  min-width: 320px;
+}
+
+.contact-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-right label {
+  font-weight: 600;
+  margin: 12px 0 6px;
+  font-size: 18px;
+}
+
+.contact-right input,
+.contact-right textarea {
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-right button {
+  margin-top: 20px;
+  padding: 14px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-right button:hover {
+  background-color: #0056b3;
+}

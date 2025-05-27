@@ -1,0 +1,138 @@
+/* Контейнер */
+.cleaning_data {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #f9fafe;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Заголовок */
+.cleaning_data_title {
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2563eb;
+}
+
+/* Сетка блока */
+.cleaning_data_block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* Подзаголовки */
+.cleaning_data_subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+/* Описание услуги */
+.cleaning_data_desc {
+  font-size: 18px;
+  padding: 12px 16px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Выпадающие списки и поля */
+.cleaning_data_address_dropdown {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  padding: 12px 40px 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23111' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.2s ease;
+}
+
+.cleaning_data_address_dropdown:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+/* Секция доп.услуг */
+.cleaning_data_services_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+}
+
+.cleaning_data_services_list label {
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Сумма заказа */
+.cleaning_data_order_sum {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: right;
+  color: #2563eb;
+  padding-top: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Кнопка подтверждения */
+.cleaning_data_submit_btn {
+  grid-column: span 2;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cleaning_data_submit_btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.cleaning_data_submit_btn:hover:not(:disabled) {
+  background-color: #1e4ec9;
+}
+
+.cleaning_data_textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+  appearance: none; /* убирает иконку вниз */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+

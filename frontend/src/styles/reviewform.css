@@ -1,0 +1,55 @@
+.review_form {
+    background: white;
+    padding: 24px;
+    max-width: 500px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .review_title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  .review_label {
+    font-weight: 500;
+    color: #374151;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .review_select,
+  .review_textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+  }
+  
+  .review_textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  .review_btn {
+    align-self: flex-start;
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .review_btn:hover {
+    background-color: #2563eb;
+  }
+  

@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f9fafc;
+}
+
+/* Общий контейнер */
+.company-profile-wrapper {
+  background: #f9fafc;
+  padding: 40px 20px;
+}
+
+.company-profile-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+}
+
+/* Левая панель */
+.company-profile-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  text-align: left;
+}
+
+.profile-title {
+  font-size: 28px;
+  background-color: #2563eb;
+  color: #fff;
+  padding: 16px;
+  border-radius: 16px 16px 0 0;
+  margin: -30px -30px 20px;
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.profile-name {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.profile-role {
+  color: #2563eb;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-label {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.profile-value {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.edit-profile-btn,
+.logout-btn,
+.button-group button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+  text-align: left;
+  margin-top: 12px;
+}
+
+.logout-btn {
+  background-color: #ef4444;
+}
+
+.edit-profile-btn:hover,
+.button-group button:hover {
+  background-color: #1d4ed8;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
+.company-form label {
+  font-weight: 500;
+  margin-top: 12px;
+  display: block;
+  font-size: 16px;
+}
+
+.company-form input,
+.company-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.section-divider {
+  margin: 30px 0 20px;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* Услуги */
+.services-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.services-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.service-input label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.service-input input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.add-service-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: left;
+}
+
+.add-service-btn:hover {
+  background-color: #1e4ec9;
+}
+
+/* Правая панель */
+.company-orders-panel {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex-grow: 1;
+}
+
+.company-orders-panel h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Стили для кнопок фильтра статуса */
+.order-status-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.order-status-tab {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  border: 1px solid #000;
+}
+
+.order-status-tab:hover {
+  background-color: #e0e7ff;
+}
+
+.order-status-tab.active {
+  background-color: #2563eb;
+  color: white;
+}
+
+/* Заказ */
+.company-order-box {
+  background: #f9fbff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e7ff;
+  margin-bottom: 16px;
+}
+
+.company-order-box p {
+  margin: 4px 0;
+}
+
+.company-order-box strong {
+  font-weight: 600;
+}
+
+/* Сотрудники */
+.company-employee-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f9fbff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #e0e7ff;
+  margin-bottom: 16px;
+}
+
+.employee-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2563eb;
+}
+
+.employee-info p {
+  margin: 4px 0;
+}
+
+/* Выпадающий список выбора таба */
+.company-orders-panel select {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  margin-left: auto;
+  margin-top: -20px;
+  height: 36px;
+  cursor: pointer;
+  appearance: none;
+  background-image: none;
+}
+
+.company-orders-panel select:focus {
+  outline: none;
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.company-orders-panel select {
+  background-color: #2563eb;
+  color: white;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  z-index: 1;
+}
+
+.company-orders-panel select:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.company-orders-panel select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4);
+}
+
+.company-orders-panel select {
+  background-color: #2563eb;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 12px 18px;
+  height: 48px;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 48px;
+  transition: all 0.2s ease-in-out;
+}
+
+.company-orders-panel select:hover {
+  background-color: #1e40af; /* темнее при наведении */
+  box-shadow: 0 6px 16px rgba(30, 64, 175, 0.3);
+}
+
+.company-orders-panel select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(191, 219, 254, 0.7);
+}
+
+
+/* Выровнять заголовок и select по центру */
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tab-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+

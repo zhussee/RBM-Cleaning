@@ -1,0 +1,426 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.profile {
+  background-color: #f9fafc;
+  padding: 40px;
+}
+
+.profile-flex-container {
+  display: flex;
+  gap: 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Левая карточка: Профиль */
+.profile-card {
+  flex: 0 0 40%;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.profile-card h2 {
+  font-size: 34px;
+  background-color: #2563EB;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 16px 16px 0 0;
+  margin: -24px -24px 20px;
+}
+
+.profile-email::before,
+.profile-phone::before {
+  display: block;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.profile-email::before {
+  content: "Email";
+}
+
+.profile-phone::before {
+  content: "Телефон";
+}
+
+.profile-name {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.profile-role {
+  font-size: 18px;
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+
+.profile-email,
+.profile-phone {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.profile-edit-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.profile-card button:not(.logout-btn) {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 6px; /* Уменьшен отступ между кнопками */
+}
+
+.profile-card button:not(.logout-btn):hover {
+  background-color: #1e4ec9;
+}
+
+.profile-edit-fields input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.logout-btn {
+  background: #f44336;
+  color: #fff;
+  margin-top: 12px; /* Уменьшен отступ */
+  border: none;
+  padding: 8px;
+  width: 100%;
+  max-width: 260px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.logout-btn:hover {
+  background: #d32f2f;
+}
+
+.profile-card hr {
+  margin: 20px 0;
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Адреса */
+.profile-addresses {
+  margin-top: 10px;
+}
+
+.profile-addresses-title {
+  font-size: 26px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.profile-addresses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-addresses-list li {
+  background-color: #f9fbff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e7ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  color: #111827;
+}
+
+.address-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-actions button {
+  background: none;
+  border: none;
+  color: #f44336;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* Кнопка "Добавить адрес" */
+.add-address-btn {
+  margin-top: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.add-address-form {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-address-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.add-address-form button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Правая карточка: Заказы */
+.orders-card {
+  flex: 0 0 60%;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.orders-card h2 {
+  font-size: 34px;
+  background-color: #2563EB;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 16px 16px 0 0;
+  margin: -24px -24px 20px;
+}
+
+/* Оформление заказов */
+.order-box {
+  background: #f1f6ff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #c6d9ff;
+  margin-bottom: 20px;
+}
+
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.order-status {
+  background: #e0e7ff;
+  padding: 4px 10px;
+  border-radius: 16px;
+  font-size: 18px;
+  color: #1e40af;
+}
+
+.order-box p {
+  margin: 4px 0;
+  font-size: 18px;
+  color: #111827;
+}
+
+.order-box p strong {
+  font-weight: 600;
+}
+
+.review-btn {
+  background: #fbbc04;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.review-btn:hover {
+  background-color: #e0a800;
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  padding: 30px 35px;
+  width: 440px;
+  max-width: 95%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  text-align: left;
+  font-size: 18px;
+}
+
+.modal-content h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.modal-content .stars {
+  margin-bottom: 20px;
+  font-size: 44px;
+  color: #ffc107;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.modal-content textarea {
+  width: 100%;
+  height: 120px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  resize: none;
+  font-family: inherit;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modal-buttons button:first-child {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.modal-buttons button:last-child {
+  background: #2f80ed;
+  color: #fff;
+}
+
+.modal-buttons button:hover {
+  opacity: 0.9;
+}
+
+.address-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+  background: #f9fafc;
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+}
+
+.address-form input {
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
+
+.address-form input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.address-form button[type="submit"] {
+  grid-column: span 2;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.address-form button[type="submit"]:hover {
+  background-color: #1e3a8a;
+}
+
+/* --- Адаптив для мобилки --- */
+@media (max-width: 640px) {
+  .address-form {
+    grid-template-columns: 1fr;
+  }
+
+  .address-form button[type="submit"] {
+    grid-column: span 1;
+  }
+}
+
