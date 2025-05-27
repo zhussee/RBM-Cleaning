@@ -17,7 +17,7 @@ import PasswordResetRequestPage from "./pages/PasswordResetRequestPage";
 import ConfirmEmailPage from "./pages/ConfirmEmailPage";
 import PaymentPage from "./pages/PaymentPage";
 import ReviewFormPage from "./pages/ReviewFormPage";
-import ContactPage from "./pages/Contactpage";
+import ContactPage from "./pages/ContactPage";
 import AiChatWidget from "./components/AiChatWidget";
 // Профильные страницы
 import ProfilePage from "./pages/ProfilePage";
