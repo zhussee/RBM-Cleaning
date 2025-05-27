@@ -22,7 +22,7 @@ from backend_company.views import (
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('api/admin/', admin.site.urls),
     # Аутентификация и профиль
     path('api/auth/', include('authentication.urls')),
     path('api/user/', include('user.urls')),
