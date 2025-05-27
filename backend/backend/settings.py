@@ -91,11 +91,18 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rbm_db',
+        'USER': 'rbm_user',
+        'PASSWORD': 'rbm_pass',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
-# AUTH_USER_MODEL = 'user.CustomUser'
+
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
