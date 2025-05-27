@@ -49,6 +49,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://rbm-cleaning.kz",
     "https://rbm-cleaning.kz",
+    "backend"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
