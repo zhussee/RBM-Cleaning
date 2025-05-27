@@ -30,7 +30,7 @@ export default function AiChatWidget() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/company/ai/chat/",
+        "/api/company/ai/chat/",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

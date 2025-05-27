@@ -42,7 +42,7 @@ const ProfilePage = () => {
 
   const fetchProfile = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/profile/", {
+      const res = await fetch("/api/profile/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.status === 401) return handleLogout();
@@ -62,7 +62,7 @@ const ProfilePage = () => {
 
   const fetchAddresses = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/user/addresses/", {
+      const res = await fetch("/api/user/addresses/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.status === 401) return handleLogout();
@@ -76,7 +76,7 @@ const ProfilePage = () => {
 
   const fetchOrders = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/user/orders/", {
+      const res = await fetch("/api/user/orders/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.status === 401) return handleLogout();
@@ -102,7 +102,7 @@ const ProfilePage = () => {
 
   const handleSave = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/profile/", {
+      const res = await fetch("/api/profile/", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -126,7 +126,7 @@ const ProfilePage = () => {
     if (!window.confirm("Удалить этот адрес?")) return;
 
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/user/addresses/${addressId}/`, {
+      const res = await fetch(`/api/user/addresses/${addressId}/`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -145,7 +145,7 @@ const ProfilePage = () => {
   };
 
   const handleReviewSubmit = async () => {
-    const response = await fetch("http://127.0.0.1:8000/api/reviews/", {
+    const response = await fetch("/api/reviews/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -269,7 +269,7 @@ const ProfilePage = () => {
                   bathrooms: parseInt(e.target.bathrooms.value),
                 };
 
-                const res = await fetch("http://127.0.0.1:8000/api/addresses/", {
+                const res = await fetch("/api/addresses/", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",

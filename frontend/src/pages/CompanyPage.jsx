@@ -13,7 +13,7 @@ const CompanyPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/company/${id}/`)
+    fetch(`/api/company/${id}/`)
       .then((res) => res.json())
       .then((data) => {
         setCompany(data.company);

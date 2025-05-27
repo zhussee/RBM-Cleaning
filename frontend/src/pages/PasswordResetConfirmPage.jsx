@@ -10,7 +10,7 @@ const PasswordResetConfirmPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/password-reset-confirm/", {
+      const response = await fetch("/api/password-reset-confirm/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ uid, token, new_password: password }),

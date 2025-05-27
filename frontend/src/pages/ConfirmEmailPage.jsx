@@ -13,7 +13,7 @@ const ConfirmEmailPage = () => {
     const confirm = async () => {
       try {
         const response = await fetch(
-          `http://127.0.0.1:8000/api/confirm-email/${uid}/${token}/`
+          `/api/confirm-email/${uid}/${token}/`
         );
         if (response.ok) {
           const email = localStorage.getItem("temp_email");
@@ -21,7 +21,7 @@ const ConfirmEmailPage = () => {
 
           if (email && password) {
             const loginResponse = await fetch(
-              "http://127.0.0.1:8000/api/login/",
+              "/api/login/",
               {
                 method: "POST",
                 headers: {

@@ -31,7 +31,7 @@ const CheckoutPage = () => {
     const token = localStorage.getItem("access_token");
 
     if (token) {
-      fetch("http://127.0.0.1:8000/api/user/addresses/", {
+      fetch("/api/user/addresses/", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -42,13 +42,13 @@ const CheckoutPage = () => {
           }
         });
 
-      fetch(`http://127.0.0.1:8000/api/company/public/employees/${companyId}/`)
+      fetch(`/api/company/public/employees/${companyId}/`)
         .then((res) => res.json())
         .then((data) => setEmployees(data));
     }
 
     if (companyId && serviceId) {
-      fetch(`http://127.0.0.1:8000/api/company/${companyId}/`)
+      fetch(`/api/company/${companyId}/`)
         .then((res) => res.json())
         .then((data) => {
           const found = data.services.find((s) => s.id === serviceId);
@@ -71,7 +71,7 @@ const CheckoutPage = () => {
     const token = localStorage.getItem("access_token");
 
     if (token && companyId) {
-      fetch(`http://127.0.0.1:8000/api/company/public/employees/${companyId}/`)
+      fetch(`/api/company/public/employees/${companyId}/`)
         .then((res) => res.json())
         .then((data) => {
           setEmployees(data);
@@ -115,7 +115,7 @@ const CheckoutPage = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/orders/", {
+      const response = await fetch("/api/orders/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

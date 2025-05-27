@@ -29,7 +29,7 @@ const EmployerProfilePage = () => {
   }, []);
 
   const fetchProfile = async () => {
-    const res = await fetch("http://127.0.0.1:8000/api/employees/profile/", {
+    const res = await fetch("/api/employees/profile/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -40,7 +40,7 @@ const EmployerProfilePage = () => {
   };
 
   const fetchOrders = async () => {
-    const res = await fetch("http://127.0.0.1:8000/api/employees/orders/", {
+    const res = await fetch("/api/employees/orders/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -51,7 +51,7 @@ const EmployerProfilePage = () => {
 
   const handleComplete = async (orderId) => {
     const res = await fetch(
-      `http://127.0.0.1:8000/api/employees/orders/${orderId}/complete/`,
+      `/api/employees/orders/${orderId}/complete/`,
       {
         method: "POST",
         headers: {
@@ -91,7 +91,7 @@ const EmployerProfilePage = () => {
     }
 
     const res = await fetch(
-      "http://127.0.0.1:8000/api/employees/profile/update/",
+      "/api/employees/profile/update/",
       {
         method: "PUT",
         headers: {

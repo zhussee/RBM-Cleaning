@@ -40,7 +40,7 @@ const EmailConfirmationPage = () => {
     setIsResent(true);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/auth/api/resend-confirmation/", {
+      const response = await fetch("/auth/api/resend-confirmation/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -8,9 +8,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", 'your-default-insecure-secret')
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['rbm-cleaning.kz', 'www.rbm-cleaning.kz', '195.49.212.63']
+
 
 # Application definition
 
@@ -43,11 +44,13 @@ MIDDLEWARE = [
 ]
 
 # CORS
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173",
+    "http://rbm-cleaning.kz",
+    "https://rbm-cleaning.kz",
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 
 # REST Framework + JWT

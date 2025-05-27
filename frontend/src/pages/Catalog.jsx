@@ -16,7 +16,7 @@ const Catalog = () => {
   const companyPerPage = 6;
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/company/")
+    fetch("/api/company/")
       .then((res) => res.json())
       .then((data) => setcompany(data))
       .catch((err) => console.error("Ошибка загрузки компаний:", err));
