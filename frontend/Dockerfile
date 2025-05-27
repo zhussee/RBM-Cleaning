@@ -1,13 +1,12 @@
-FROM node:alpine as build
+FROM node:alpine AS build
 
-COPY package.json package.json
+WORKDIR /app
+COPY package.json ./
 RUN npm install
 COPY . .
-RUN npm build
+RUN npm run build
 
 FROM nginx:stable-alpine
-
-COPY --from=build /dist /usr/share/nginx/htlm
-COPY --from=build nginx.conf /etc/nginx/comf.d/default.conf
-EXPOSE 5174
-CMD [ "nginx", "-g", "daemon off;" ]
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

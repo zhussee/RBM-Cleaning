@@ -1,3 +1,6 @@
+networks:
+  dev:
+
 services:
   nginx:
     image: nginx:stable-alpine
@@ -7,18 +10,18 @@ services:
       - './nginx.conf:/etc/nginx/nginx.conf'
     networks:
       - dev
+    depends_on:
+      - frontend
+      - backend
 
   backend:
-    build: 
+    build:
       context: ./backend
-    networks:
-      - dev      
-
-  frontend:
-    build: 
-      context: ./frontend
     networks:
       - dev
 
-networks:
-  dev: {}
+  frontend:
+    build:
+      context: ./frontend
+    networks:
+      - dev
