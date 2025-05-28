@@ -107,12 +107,6 @@ class MyTokenObtainPairSerializer(serializers.Serializer):
         else:
             raise serializers.ValidationError({"detail": "Введите email и пароль."})
 
-    def create(self, validated_data):
-        pass  # не используется
-
-    def update(self, instance, validated_data):
-        pass  # не используется
-
     @classmethod
     def get_token(cls, user):
         token = TokenObtainPairSerializer.get_token(user)

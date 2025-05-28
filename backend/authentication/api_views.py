@@ -65,22 +65,22 @@ def confirm_email_api(request, uidb64, token):
 
 
 
-# Отправка email подтверждения
-def send_confirmation_email(user):
-    token = default_token_generator.make_token(user)
-    uid = urlsafe_base64_encode(force_bytes(user.pk))
-    confirm_url = f"{settings.FRONTEND_URL}/confirm_email/{uid}/{token}/"
+# # Отправка email подтверждения
+# def send_confirmation_email(user):
+#     token = default_token_generator.make_token(user)
+#     uid = urlsafe_base64_encode(force_bytes(user.pk))
+#     confirm_url = f"{settings.FRONTEND_URL}/confirm_email/{uid}/{token}/"
 
-    subject = "Подтверждение регистрации"
-    message = f"Нажмите на ссылку, чтобы подтвердить почту: {confirm_url}"
+#     subject = "Подтверждение регистрации"
+#     message = f"Нажмите на ссылку, чтобы подтвердить почту: {confirm_url}"
 
-    send_mail(
-        subject,
-        message,
-        settings.DEFAULT_FROM_EMAIL,
-        [user.email],
-        fail_silently=False,
-    )
+#     send_mail(
+#         subject,
+#         message,
+#         settings.DEFAULT_FROM_EMAIL,
+#         [user.email],
+#         fail_silently=False,
+#     )
     
 
 @api_view(['POST'])
