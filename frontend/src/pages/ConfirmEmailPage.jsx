@@ -21,7 +21,7 @@ const ConfirmEmailPage = () => {
 
           if (email && password) {
             const loginResponse = await fetch(
-              "/api/login/",
+              "http://rbm-cleaning.kz/api/auth/login/",
               {
                 method: "POST",
                 headers: {
