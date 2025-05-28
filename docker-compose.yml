@@ -38,6 +38,7 @@ services:
       - frontend_dist:/usr/share/nginx/html
       - './nginx.conf:/etc/nginx/nginx.conf'
       - ./static:/static
+      - ./media:/media
     depends_on:
       - backend
     networks:
