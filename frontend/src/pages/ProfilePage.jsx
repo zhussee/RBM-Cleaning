@@ -42,7 +42,7 @@ const ProfilePage = () => {
 
   const fetchProfile = async () => {
     try {
-      const res = await fetch("/api/profile/", {
+      const res = await fetch("/api/user/profile/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (res.status === 401) return handleLogout();
@@ -102,7 +102,7 @@ const ProfilePage = () => {
 
   const handleSave = async () => {
     try {
-      const res = await fetch("/api/profile/", {
+      const res = await fetch("/api/user/profile/", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

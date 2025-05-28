@@ -40,7 +40,7 @@ const EmployerProfilePage = () => {
   };
 
   const fetchOrders = async () => {
-    const res = await fetch("/api/employees/orders/", {
+    const res = await fetch("/api/user/employees/orders/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -51,7 +51,7 @@ const EmployerProfilePage = () => {
 
   const handleComplete = async (orderId) => {
     const res = await fetch(
-      `/api/employees/orders/${orderId}/complete/`,
+      `/api/user/employees/orders/${orderId}/complete/`,
       {
         method: "POST",
         headers: {

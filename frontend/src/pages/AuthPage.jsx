@@ -26,7 +26,7 @@ const AuthPage = () => {
     setError("");
 
     try {
-      const response = await fetch("/api/login/", {
+      const response = await fetch("http://rbm-cleaning.kz/api/auth/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

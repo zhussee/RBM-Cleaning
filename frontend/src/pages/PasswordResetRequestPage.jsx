@@ -12,7 +12,7 @@ const PasswordResetRequestPage = () => {
     setError("");
 
     try {
-      const response = await fetch("/api/password-reset/", {
+      const response = await fetch("http://rbm-cleaning.kz/api/auth/password-reset/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

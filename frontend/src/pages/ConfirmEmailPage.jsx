@@ -13,7 +13,7 @@ const ConfirmEmailPage = () => {
     const confirm = async () => {
       try {
         const response = await fetch(
-          `/api/confirm-email/${uid}/${token}/`
+          `http://rbm-cleaning.kz/api/auth/confirm-email/${uid}/${token}/`
         );
         if (response.ok) {
           const email = localStorage.getItem("temp_email");
