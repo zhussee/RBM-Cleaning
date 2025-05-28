@@ -62,7 +62,7 @@ const Catalog = () => {
               <Link to={`/company/${company.id}`} className="catalog-image-link">
                 <div className="catalog-image">
                   <img
-                    src={company.image ? `http://127.0.0.1:8000${company.image}` : companyImg}
+                    src={company.image ? `http://rbm-cleaning.kz/api${company.image}` : companyImg}
                     alt={company.name}
                   />
                   <div className="overlay">

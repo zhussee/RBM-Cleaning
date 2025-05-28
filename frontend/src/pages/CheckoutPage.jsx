@@ -31,7 +31,7 @@ const CheckoutPage = () => {
     const token = localStorage.getItem("access_token");
 
     if (token) {
-      fetch("/api/user/addresses/", {
+      fetch("http://rbm-cleaning.kz/api/user/addresses/", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -140,8 +140,8 @@ const CheckoutPage = () => {
           amount: data.amount.toString(), // обязательно строкой
           currency: "KZT",
           auth: data.access_token,
-          backLink: "http://localhost:5173/profile",
-          failureBackLink: "http://localhost:5173/payment-failed",
+          backLink: "http://rbm-cleaning.kz/profile",
+          failureBackLink: "http://rbm-cleaning.kz/payment-failed",
           autoBackLink: true,
           description: "Оплата клининга",
           language: "rus",

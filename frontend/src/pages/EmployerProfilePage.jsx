@@ -29,7 +29,7 @@ const EmployerProfilePage = () => {
   }, []);
 
   const fetchProfile = async () => {
-    const res = await fetch("/api/employees/profile/", {
+    const res = await fetch("http://rbm-cleaning.kz/api/employees/profile/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -40,7 +40,7 @@ const EmployerProfilePage = () => {
   };
 
   const fetchOrders = async () => {
-    const res = await fetch("/api/user/employees/orders/", {
+    const res = await fetch("http://rbm-cleaning.kz/api/user/employees/orders/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -51,7 +51,7 @@ const EmployerProfilePage = () => {
 
   const handleComplete = async (orderId) => {
     const res = await fetch(
-      `/api/user/employees/orders/${orderId}/complete/`,
+      `http://rbm-cleaning.kz/api/user/employees/orders/${orderId}/complete/`,
       {
         method: "POST",
         headers: {
@@ -91,7 +91,7 @@ const EmployerProfilePage = () => {
     }
 
     const res = await fetch(
-      "/api/employees/profile/update/",
+      "http://rbm-cleaning.kz/api/employees/profile/update/",
       {
         method: "PUT",
         headers: {

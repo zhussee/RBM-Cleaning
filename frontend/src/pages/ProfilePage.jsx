@@ -269,7 +269,7 @@ const ProfilePage = () => {
                   bathrooms: parseInt(e.target.bathrooms.value),
                 };
 
-                const res = await fetch("/api/addresses/", {
+                const res = await fetch("http://rbm-cleaning.kz/api/addresses/", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json",
