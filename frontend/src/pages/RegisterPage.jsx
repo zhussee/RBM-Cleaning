@@ -55,7 +55,7 @@ const RegisterPage = () => {
     }
 
     try {
-      const response = await fetch("/api/register/", {
+      const response = await fetch("http://rbm-cleaning.kz/api/register/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
