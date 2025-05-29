@@ -3,7 +3,7 @@ from django.urls import path, include
 from AddService import views as add_views
 from django.conf import settings
 from django.conf.urls.static import static
-
+from user.views import employee_profile_view
 from backend_company.views import (
     create_order,
     create_address,
@@ -26,7 +26,7 @@ urlpatterns = [
     # Аутентификация и профиль
     path('api/auth/', include('authentication.urls')),
     path('api/user/', include('user.urls')),
-
+    path('api/employees/profile/', employee_profile_view, name='employee_profile'),
     # Главная и сервисы
     path('', add_views.service_list, name='home'),
     path('service/add/', add_views.add_service, name='add_service'),
