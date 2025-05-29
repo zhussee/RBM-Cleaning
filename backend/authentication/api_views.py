@@ -1,4 +1,4 @@
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth import authenticate
@@ -14,6 +14,7 @@ from .serializers import RegistrationSerializer, PasswordResetRequestSerializer,
 from django.template.loader import render_to_string
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.permissions import IsAuthenticated
 
 
 # Регистрация
@@ -132,3 +133,16 @@ class MyTokenObtainPairView(APIView):
             "email": user.email,
             "user_id": user.id,
         }, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def user_status_view(request):
+    user = request.user
+
+    if hasattr(user, 'company'):
+        return Response({"status": "company"})
+    elif hasattr(user, 'employee'):
+        return Response({"status": "employee"})
+    else:
+        return Response({"status": "client"})

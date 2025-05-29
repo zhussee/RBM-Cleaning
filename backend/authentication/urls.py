@@ -5,7 +5,8 @@ from .api_views import (
     confirm_email_api,
     MyTokenObtainPairView,
     password_reset_request, 
-    password_reset_confirm
+    password_reset_confirm,
+    user_status_view
 )
 from rest_framework_simplejwt.views import TokenRefreshView
 
@@ -17,4 +18,5 @@ urlpatterns = [
     path('confirm-email/<uidb64>/<token>/', confirm_email_api, name='confirm_email'),
     path('password-reset/', password_reset_request, name='password_reset'),
     path('password-reset-confirm/', password_reset_confirm, name='password_reset_confirm'),
+    path('status/', user_status_view, name='user_status'),
 ]

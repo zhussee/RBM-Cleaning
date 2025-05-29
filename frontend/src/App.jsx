@@ -33,7 +33,7 @@ const ProfileRouter = () => {
   React.useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const res = await fetch("/api/profile/", {
+        const res = await fetch("/api/auth/status/", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
