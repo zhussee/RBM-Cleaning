@@ -140,7 +140,7 @@ class MyTokenObtainPairView(APIView):
 def user_status_view(request):
     user = request.user
     try:
-        profile = user.profile  # получаем UserProfile
+        profile = user.profile 
         return Response({"status": profile.status})
     except UserProfile.DoesNotExist:
         return Response({"status": "unknown"})
