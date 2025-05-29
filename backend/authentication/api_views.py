@@ -15,7 +15,7 @@ from django.template.loader import render_to_string
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
-
+from user.models import UserProfile
 
 # Регистрация
 @api_view(['POST'])
@@ -139,10 +139,8 @@ class MyTokenObtainPairView(APIView):
 @permission_classes([IsAuthenticated])
 def user_status_view(request):
     user = request.user
-
-    if hasattr(user, 'company'):
-        return Response({"status": "company"})
-    elif hasattr(user, 'employee'):
-        return Response({"status": "employee"})
-    else:
-        return Response({"status": "client"})
+    try:
+        profile = user.profile  # получаем UserProfile
+        return Response({"status": profile.status})
+    except UserProfile.DoesNotExist:
+        return Response({"status": "unknown"})
