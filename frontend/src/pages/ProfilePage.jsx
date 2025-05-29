@@ -10,6 +10,7 @@ const ProfilePage = () => {
     patronymic: "",
     phone_number: "",
     email: "",
+    avatar: null,
   });
   const [addresses, setAddresses] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -54,6 +55,7 @@ const ProfilePage = () => {
         patronymic: data.patronymic || "",
         phone_number: data.phone_number || "",
         email: data.email || "",
+        avatar: data.avatar || null,
       });
     } catch (err) {
       console.error("Ошибка профиля:", err);
@@ -102,13 +104,19 @@ const ProfilePage = () => {
 
   const handleSave = async () => {
     try {
+      const payload = new FormData();
+      for (const key in formData) {
+        if (formData[key] !== null && formData[key] !== undefined) {
+          payload.append(key, formData[key]);
+        }
+      }
+
       const res = await fetch("/api/user/profile/", {
         method: "PUT",
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(formData),
+        body: payload,
       });
 
       if (res.ok) {
@@ -166,11 +174,16 @@ const ProfilePage = () => {
 
   const renderStatus = (status) => {
     switch (status) {
-      case "new": return "Новый";
-      case "confirmed": return "Принятый";
-      case "completed": return "Завершённый";
-      case "canceled": return "Отменённый";
-      default: return "Неизвестный";
+      case "new":
+        return "Новый";
+      case "confirmed":
+        return "Принятый";
+      case "completed":
+        return "Завершённый";
+      case "canceled":
+        return "Отменённый";
+      default:
+        return "Неизвестный";
     }
   };
 
@@ -185,9 +198,14 @@ const ProfilePage = () => {
               {[1, 2, 3, 4, 5].map((num) => (
                 <span
                   key={num}
-                  style={{ cursor: "pointer", color: num <= rating ? "#ffc107" : "#ccc" }}
+                  style={{
+                    cursor: "pointer",
+                    color: num <= rating ? "#ffc107" : "#ccc",
+                  }}
                   onClick={() => setRating(num)}
-                >★</span>
+                >
+                  ★
+                </span>
               ))}
             </div>
             <textarea
@@ -206,28 +224,87 @@ const ProfilePage = () => {
       {/* профиль */}
       <div className="profile-card">
         <h2>Профиль</h2>
-        <p className="profile-name">{formData.last_name} {formData.first_name}</p>
+        {formData.avatar && (
+          <img
+            src={formData.avatar}
+            alt="avatar"
+            className="profile-avatar"
+            style={{
+              width: 100,
+              height: 100,
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+        )}
+
+        <p className="profile-name">
+          {formData.last_name} {formData.first_name}
+        </p>
         <p className="profile-role">Клиент</p>
         <p className="profile-email">{formData.email}</p>
         <p className="profile-phone">{formData.phone_number}</p>
 
         {isEditing ? (
           <div className="profile-edit-fields">
-            <input name="last_name" value={formData.last_name} onChange={handleChange} placeholder="Фамилия" />
-            <input name="first_name" value={formData.first_name} onChange={handleChange} placeholder="Имя" />
-            <input name="patronymic" value={formData.patronymic} onChange={handleChange} placeholder="Отчество" />
-            <input name="phone_number" value={formData.phone_number} onChange={handleChange} placeholder="Телефон" />
-            <input name="email" value={formData.email} onChange={handleChange} placeholder="Email" />
+            <label>
+              Аватар:
+              <input
+                type="file"
+                name="avatar"
+                accept="image/*"
+                onChange={(e) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    avatar: e.target.files[0],
+                  }))
+                }
+              />
+            </label>
+            <input
+              name="last_name"
+              value={formData.last_name}
+              onChange={handleChange}
+              placeholder="Фамилия"
+            />
+            <input
+              name="first_name"
+              value={formData.first_name}
+              onChange={handleChange}
+              placeholder="Имя"
+            />
+            <input
+              name="patronymic"
+              value={formData.patronymic}
+              onChange={handleChange}
+              placeholder="Отчество"
+            />
+            <input
+              name="phone_number"
+              value={formData.phone_number}
+              onChange={handleChange}
+              placeholder="Телефон"
+            />
+            <input
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+            />
             <div className="profile-edit-buttons">
               <button onClick={handleSave}>Сохранить</button>
               <button onClick={() => setIsEditing(false)}>Отмена</button>
             </div>
           </div>
         ) : (
-          <button onClick={() => setIsEditing(true)}>Редактировать профиль</button>
+          <button onClick={() => setIsEditing(true)}>
+            Редактировать профиль
+          </button>
         )}
 
-        <button className="logout-btn" onClick={handleLogout}>Выйти</button>
+        <button className="logout-btn" onClick={handleLogout}>
+          Выйти
+        </button>
 
         <hr />
 
@@ -238,21 +315,30 @@ const ProfilePage = () => {
             {addresses.map((addr) => (
               <li key={addr.id}>
                 <div className="address-details">
-                  <strong>{addr.city}, {addr.street}, д.{addr.house}</strong>
+                  <strong>
+                    {addr.city}, {addr.street}, д.{addr.house}
+                  </strong>
                   <span>Кв. {addr.apartment}</span>
                   {addr.entrance && <span>Подъезд: {addr.entrance}</span>}
                   {addr.floor && <span>Этаж: {addr.floor}</span>}
                   {addr.bathrooms && <span>Санузлов: {addr.bathrooms}</span>}
                 </div>
                 <div className="address-actions">
-                  <button onClick={() => handleDeleteAddress(addr.id)}>🗑</button>
+                  <button onClick={() => handleDeleteAddress(addr.id)}>
+                    🗑
+                  </button>
                 </div>
               </li>
             ))}
           </ul>
 
           {!showForm ? (
-            <button className="add-address-btn" onClick={() => setShowForm(true)}>Добавить адрес</button>
+            <button
+              className="add-address-btn"
+              onClick={() => setShowForm(true)}
+            >
+              Добавить адрес
+            </button>
           ) : (
             <form
               className="address-form"
@@ -269,14 +355,17 @@ const ProfilePage = () => {
                   bathrooms: parseInt(e.target.bathrooms.value),
                 };
 
-                const res = await fetch("http://rbm-cleaning.kz/api/addresses/", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`,
-                  },
-                  body: JSON.stringify(formData),
-                });
+                const res = await fetch(
+                  "http://rbm-cleaning.kz/api/addresses/",
+                  {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Authorization: `Bearer ${token}`,
+                    },
+                    body: JSON.stringify(formData),
+                  }
+                );
 
                 if (res.ok) {
                   alert("Адрес добавлен");
@@ -291,12 +380,27 @@ const ProfilePage = () => {
               <input type="text" name="city" placeholder="Город" required />
               <input type="text" name="street" placeholder="Улица" required />
               <input type="text" name="house" placeholder="Дом" required />
-              <input type="text" name="apartment" placeholder="Квартира (необязательно)" />
-              <input type="number" name="square_meters" placeholder="Площадь квартиры (м²)" required />
+              <input
+                type="text"
+                name="apartment"
+                placeholder="Квартира (необязательно)"
+              />
+              <input
+                type="number"
+                name="square_meters"
+                placeholder="Площадь квартиры (м²)"
+                required
+              />
               <input type="text" name="entrance" placeholder="Подъезд" />
               <input type="number" name="floor" placeholder="Этаж" />
-              <input type="number" name="bathrooms" placeholder="Количество санузлов" />
-              <button type="submit" className="add-address-btn">Сохранить</button>
+              <input
+                type="number"
+                name="bathrooms"
+                placeholder="Количество санузлов"
+              />
+              <button type="submit" className="add-address-btn">
+                Сохранить
+              </button>
             </form>
           )}
         </div>
@@ -311,15 +415,30 @@ const ProfilePage = () => {
             <div key={order.id} className="order-box">
               <div className="order-top">
                 <strong>{order.company_name}</strong>
-                <span className={`order-status ${order.status}`}>{renderStatus(order.status)}</span>
+                <span className={`order-status ${order.status}`}>
+                  {renderStatus(order.status)}
+                </span>
               </div>
               <p>📍 {order.address_name}</p>
               <p>👤 {order.employee_name || "Сотрудник не назначен"}</p>
-              <p><strong>Пожелания:</strong> {order.comment}</p>
-              <p><strong>Услуга:</strong> {order.service_name} — {order.total_amount?.toLocaleString()} ₸</p>
+              <p>
+                <strong>Пожелания:</strong> {order.comment}
+              </p>
+              <p>
+                <strong>Услуга:</strong> {order.service_name} —{" "}
+                {order.total_amount?.toLocaleString()} ₸
+              </p>
 
               {order.status === "completed" && !order.has_review && (
-                <button className="review-btn" onClick={() => { setSelectedOrderId(order.id); setShowReviewModal(true); }}>Оставить отзыв</button>
+                <button
+                  className="review-btn"
+                  onClick={() => {
+                    setSelectedOrderId(order.id);
+                    setShowReviewModal(true);
+                  }}
+                >
+                  Оставить отзыв
+                </button>
               )}
 
               {order.status === "completed" && order.has_review && (
