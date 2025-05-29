@@ -20,7 +20,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         user_data = validated_data.pop('user', {})
         user = instance.user
-        avatar = self.context['request'].FILES.get('avatar')
+        request = self.context.get('request')
+        avatar = request.FILES.get('avatar') if request else None
+
         if avatar:
             user.avatar = avatar
 

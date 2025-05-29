@@ -3,7 +3,10 @@ from django.urls import path, include
 from AddService import views as add_views
 from django.conf import settings
 from django.conf.urls.static import static
-from user.views import employee_profile_view
+from user.views import (
+    employee_profile_view,
+    update_employee_profile
+)
 from backend_company.views import (
     create_order,
     create_address,
@@ -51,7 +54,7 @@ urlpatterns = [
     path('api/orders/<int:order_id>/confirm/', confirm_order, name='confirm_order_by_company'),
     path('api/employee/orders/<int:order_id>/complete/', complete_order, name='complete_order'),
     path('api/employee/orders/available/', available_orders_for_employee, name='available_orders_for_employee'),
-    path("api/employees/profile/update/", employee_profile_view, name="employee_profile_update"),
+    path("api/employees/profile/update/", update_employee_profile, name="employee_profile_update"),
     path('api/employees/create/', create_employee, name='create_employee'),
     # Оплата картой
     path('payment/callback/', payment_callback),

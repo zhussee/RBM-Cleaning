@@ -35,7 +35,12 @@ def profile_view(request):
         return Response(serializer.data)
 
     if request.method == 'PUT':
-        serializer = UserProfileSerializer(profile, data=request.data, partial=True)
+        serializer = UserProfileSerializer(
+            profile,
+            data=request.data,
+            partial=True,
+            context={"request": request} 
+        )
         if serializer.is_valid():
             serializer.save()
             _update_avatar(request, user)
@@ -44,7 +49,6 @@ def profile_view(request):
 
 
 def _update_avatar(request, user):
-    
     avatar = request.data.get('avatar')
     if avatar:
         user.avatar = avatar
@@ -55,6 +59,7 @@ def _update_avatar(request, user):
             if employee:
                 employee.avatar = avatar
                 employee.save()
+
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])

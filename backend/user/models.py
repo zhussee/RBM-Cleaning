@@ -21,7 +21,7 @@ class UserProfile(models.Model):
         upload_to='avatars/',
         null=True,
         blank=True,
-        default=default_avatar_path  # вот эта строка — ключевая
+        default=default_avatar_path  
     )
 
     def __str__(self):
