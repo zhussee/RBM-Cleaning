@@ -39,26 +39,12 @@ def profile_view(request):
             profile,
             data=request.data,
             partial=True,
-            context={"request": request} 
+            context={"request": request}
         )
         if serializer.is_valid():
             serializer.save()
-            _update_avatar(request, user)
             return Response(serializer.data)
         return Response(serializer.errors, status=400)
-
-
-def _update_avatar(request, user):
-    avatar = request.data.get('avatar')
-    if avatar:
-        user.avatar = avatar
-        user.save()
-
-        if user.role == 'employee':
-            employee = user.company_employee
-            if employee:
-                employee.avatar = avatar
-                employee.save()
 
 
 @api_view(['GET'])

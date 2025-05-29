@@ -20,21 +20,18 @@ class UserProfileSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         user_data = validated_data.pop('user', {})
         user = instance.user
-        request = self.context.get('request')
-        avatar = request.FILES.get('avatar') if request else None
-
-        if avatar:
-            user.avatar = avatar
 
         for attr, value in user_data.items():
             setattr(user, attr, value)
+
+        request = self.context.get('request')
+        if request and 'avatar' in request.FILES:
+            instance.avatar = request.FILES['avatar']
+
         user.save()
-
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
         instance.save()
-
         return instance
+
 
     def to_representation(self, instance):
         rep = super().to_representation(instance)
