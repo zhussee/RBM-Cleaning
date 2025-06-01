@@ -13,7 +13,7 @@ const ReviewFormPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("http://rbm-cleaning.kz/api/reviews/", {
+    const response = await fetch("https://rbm-cleaning.kz/api/reviews/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

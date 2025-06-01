@@ -10,7 +10,7 @@ const PasswordResetConfirmPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://rbm-cleaning.kz/api/auth/password-reset-confirm/", {
+      const response = await fetch("https://rbm-cleaning.kz/api/auth/password-reset-confirm/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ uid, token, new_password: password }),

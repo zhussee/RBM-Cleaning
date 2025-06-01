@@ -11,7 +11,7 @@ const PaymentPage = () => {
 
   const handlePay = async () => {
     try {
-      const response = await fetch("http://rbm-cleaning.kz/api/orders/", {
+      const response = await fetch("https://rbm-cleaning.kz/api/orders/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

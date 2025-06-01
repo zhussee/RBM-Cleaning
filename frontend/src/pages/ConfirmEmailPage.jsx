@@ -13,7 +13,7 @@ const ConfirmEmailPage = () => {
     const confirm = async () => {
       try {
         const response = await fetch(
-          `http://rbm-cleaning.kz/api/auth/confirm-email/${uid}/${token}/`
+          `https://rbm-cleaning.kz/api/auth/confirm-email/${uid}/${token}/`
         );
         if (response.ok) {
           const email = localStorage.getItem("temp_email");
@@ -21,7 +21,7 @@ const ConfirmEmailPage = () => {
 
           if (email && password) {
             const loginResponse = await fetch(
-              "http://rbm-cleaning.kz/api/auth/login/",
+              "https://rbm-cleaning.kz/api/auth/login/",
               {
                 method: "POST",
                 headers: {

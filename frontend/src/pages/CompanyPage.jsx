@@ -44,7 +44,7 @@ const CompanyPage = () => {
         <div className="company-left">
           <div className="company-card">
             <img
-              src={company.image ? `http://rbm-cleaning.kz/api/${company.image}` : companyImg}
+              src={company.image ? `https://rbm-cleaning.kz/api/${company.image}` : companyImg}
               alt={company.name}
               className="company-img"
             />

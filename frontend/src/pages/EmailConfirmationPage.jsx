@@ -40,7 +40,7 @@ const EmailConfirmationPage = () => {
     setIsResent(true);
 
     try {
-      const response = await fetch("http://rbm-cleaning.kz/api/auth/resend-confirmation/", {
+      const response = await fetch("https://rbm-cleaning.kz/api/auth/resend-confirmation/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

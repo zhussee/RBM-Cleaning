@@ -45,7 +45,7 @@ const CompanyProfilePage = () => {
   }, []);
 
   const fetchCompany = async () => {
-    const res = await fetch("http://rbm-cleaning.kz/api/company/profile/", {
+    const res = await fetch("https://rbm-cleaning.kz/api/company/profile/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -56,7 +56,7 @@ const CompanyProfilePage = () => {
   };
 
   const fetchOrders = async () => {
-    const res = await fetch("http://rbm-cleaning.kz/api/company/orders/", {
+    const res = await fetch("https://rbm-cleaning.kz/api/company/orders/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -66,7 +66,7 @@ const CompanyProfilePage = () => {
   };
 
   const fetchServices = async () => {
-    const res = await fetch("http://rbm-cleaning.kz/api/services/", {
+    const res = await fetch("https://rbm-cleaning.kz/api/services/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -76,7 +76,7 @@ const CompanyProfilePage = () => {
   };
 
   const fetchExtras = async () => {
-    const res = await fetch("http://rbm-cleaning.kz/api/additional-services/", {
+    const res = await fetch("https://rbm-cleaning.kz/api/additional-services/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -86,7 +86,7 @@ const CompanyProfilePage = () => {
   };
 
   const fetchEmployees = async () => {
-    const res = await fetch("http://rbm-cleaning.kz/api/company/employees/", {
+    const res = await fetch("https://rbm-cleaning.kz/api/company/employees/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -96,7 +96,7 @@ const CompanyProfilePage = () => {
   };
 
   const fetchReviews = async () => {
-    const res = await fetch("http://rbm-cleaning.kz/api/company/reviews/", {
+    const res = await fetch("https://rbm-cleaning.kz/api/company/reviews/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (res.ok) {
@@ -122,7 +122,7 @@ const CompanyProfilePage = () => {
     });
 
     const res = await fetch(
-      "http://rbm-cleaning.kz/api/company/profile/update/",
+      "https://rbm-cleaning.kz/api/company/profile/update/",
       {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
@@ -147,7 +147,7 @@ const CompanyProfilePage = () => {
 
   const handleConfirm = async (orderId) => {
     const res = await fetch(
-      `http://rbm-cleaning.kz/api/company/orders/${orderId}/confirm/`,
+      `https://rbm-cleaning.kz/api/company/orders/${orderId}/confirm/`,
       {
         method: "POST",
         headers: {
@@ -166,7 +166,7 @@ const CompanyProfilePage = () => {
 
   const handleCancel = async (orderId) => {
     const res = await fetch(
-      `http://rbm-cleaning.kz/api/company/orders/${orderId}/cancel/`,
+      `https://rbm-cleaning.kz/api/company/orders/${orderId}/cancel/`,
       {
         method: "POST",
         headers: {
@@ -194,7 +194,7 @@ const CompanyProfilePage = () => {
       password: e.target.password.value,
     };
 
-    const res = await fetch("http://rbm-cleaning.kz/api/employees/create/", {
+    const res = await fetch("https://rbm-cleaning.kz/api/employees/create/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -344,7 +344,7 @@ const CompanyProfilePage = () => {
                     lead_time: parseInt(e.target.lead_time.value),
                   };
                   const res = await fetch(
-                    "http://rbm-cleaning.kz/api/services_add/",
+                    "https://rbm-cleaning.kz/api/services_add/",
                     {
                       method: "POST",
                       headers: {
@@ -401,7 +401,7 @@ const CompanyProfilePage = () => {
                     price: parseFloat(e.target.price.value),
                   };
                   const res = await fetch(
-                    "http://rbm-cleaning.kz/api/additional-services/",
+                    "https://rbm-cleaning.kz/api/additional-services/",
                     {
                       method: "POST",
                       headers: {

@@ -356,7 +356,7 @@ const ProfilePage = () => {
                 };
 
                 const res = await fetch(
-                  "http://rbm-cleaning.kz/api/addresses/",
+                  "https://rbm-cleaning.kz/api/addresses/",
                   {
                     method: "POST",
                     headers: {

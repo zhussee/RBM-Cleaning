@@ -31,7 +31,7 @@ const CheckoutPage = () => {
     const token = localStorage.getItem("access_token");
 
     if (token) {
-      fetch("http://rbm-cleaning.kz/api/user/addresses/", {
+      fetch("https://rbm-cleaning.kz/api/user/addresses/", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -81,7 +81,7 @@ const CheckoutPage = () => {
 
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://test-epay.homebank.kz/payform/payment-api.js";
+    script.src = "httpss://test-epay.homebank.kz/payform/payment-api.js";
     script.async = true;
 
     script.onload = () => console.log("✅ Скрипт Epay загружен");
@@ -140,8 +140,8 @@ const CheckoutPage = () => {
           amount: data.amount.toString(), // обязательно строкой
           currency: "KZT",
           auth: data.access_token,
-          backLink: "http://rbm-cleaning.kz/profile",
-          failureBackLink: "http://rbm-cleaning.kz/payment-failed",
+          backLink: "https://rbm-cleaning.kz/profile",
+          failureBackLink: "https://rbm-cleaning.kz/payment-failed",
           autoBackLink: true,
           description: "Оплата клининга",
           language: "rus",
