@@ -44,6 +44,7 @@ def profile_view(request):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
+        print(serializer.errors)
         return Response(serializer.errors, status=400)
 
 
