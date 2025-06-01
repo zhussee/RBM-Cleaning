@@ -27,6 +27,8 @@ class UserProfileSerializer(serializers.ModelSerializer):
         request = self.context.get('request')
         if request and 'avatar' in request.FILES:
             instance.avatar = request.FILES['avatar']
+        elif 'avatar' in validated_data:
+            validated_data.pop('avatar')  # игнорируем, если это строка/невалидный формат
 
         user.save()
         instance.save()
