@@ -41,7 +41,7 @@ services:
       - ./static:/static
       - ./media:/media
       - /var/www/certbot:/var/www/certbot
-      - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     depends_on:
       - backend
     networks:
