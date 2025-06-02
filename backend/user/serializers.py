@@ -25,17 +25,23 @@ class UserProfileSerializer(serializers.ModelSerializer):
             setattr(user, attr, value)
 
         request = self.context.get('request')
+
+        # Проверка avatar: если это файл, устанавливаем. Если нет — удаляем.
+        avatar_value = validated_data.get('avatar', None)
         if request and hasattr(request, 'FILES') and 'avatar' in request.FILES:
             instance.avatar = request.FILES['avatar']
-        else:
+        elif not isinstance(avatar_value, (bytes, type(None))):
+            # Удаляем avatar, если это строка, dict, или другой неподходящий тип
             validated_data.pop('avatar', None)
 
+        # Обновление остальных полей
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
 
         user.save()
         instance.save()
         return instance
+
 
 
 
