@@ -106,13 +106,14 @@ const ProfilePage = () => {
     try {
       const payload = new FormData();
       for (const key in formData) {
-        // Явно исключаем avatar, добавим ниже вручную
-        if (
-          key !== "avatar" &&
-          formData[key] !== null &&
-          formData[key] !== undefined
-        ) {
-          payload.append(key, formData[key]);
+        const value = formData[key];
+
+        if (key === "avatar") {
+          if (value instanceof File) {
+            payload.append("avatar", value); 
+          }
+        } else if (value !== null && value !== undefined) {
+          payload.append(key, value);
         }
       }
 
