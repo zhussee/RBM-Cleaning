@@ -245,7 +245,7 @@ const ProfilePage = () => {
         )}
 
         <p className="profile-name">
-          {formData.last_name} {formData.first_name}
+          {formData.last_name} {formData.first_name} {formData.patronymic}
         </p>
         <p className="profile-role">Клиент</p>
         <p className="profile-email">{formData.email}</p>
