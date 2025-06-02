@@ -106,7 +106,12 @@ const ProfilePage = () => {
     try {
       const payload = new FormData();
       for (const key in formData) {
-        if (formData[key] !== null && formData[key] !== undefined) {
+        // Явно исключаем avatar, добавим ниже вручную
+        if (
+          key !== "avatar" &&
+          formData[key] !== null &&
+          formData[key] !== undefined
+        ) {
           payload.append(key, formData[key]);
         }
       }
