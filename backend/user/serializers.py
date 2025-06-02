@@ -25,14 +25,18 @@ class UserProfileSerializer(serializers.ModelSerializer):
             setattr(user, attr, value)
 
         request = self.context.get('request')
-        if request and 'avatar' in request.FILES:
+        if request and hasattr(request, 'FILES') and 'avatar' in request.FILES:
             instance.avatar = request.FILES['avatar']
-        elif 'avatar' in validated_data:
-            validated_data.pop('avatar')  # игнорируем, если это строка/невалидный формат
+        else:
+            validated_data.pop('avatar', None)
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
 
         user.save()
         instance.save()
         return instance
+
 
 
     def to_representation(self, instance):
