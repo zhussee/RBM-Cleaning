@@ -29,10 +29,9 @@ class UserProfileSerializer(serializers.ModelSerializer):
         # Проверка avatar
         avatar = validated_data.get('avatar', None)
         if avatar:
-            if hasattr(avatar, 'read'):  # это файл
+            if hasattr(avatar, 'read'):  
                 instance.avatar = avatar
             else:
-                # Это не файл, значит удаляем
                 validated_data.pop('avatar')
         else:
             validated_data.pop('avatar', None)

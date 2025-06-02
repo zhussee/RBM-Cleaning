@@ -48,6 +48,7 @@
   font-weight: 600;
   margin: 12px 0 6px;
   font-size: 18px;
+  font-family: "Poppins", sans-serif;
 }
 
 .contact-right input,
@@ -57,6 +58,13 @@
   border-radius: 8px;
   border: 1px solid #d1d5db;
   font-family: "Poppins", sans-serif;
+}
+
+.contact-right input::placeholder,
+.contact-right textarea::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #6b7280;
 }
 
 .contact-right button {
@@ -75,4 +83,61 @@
 
 .contact-right button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 516px) {
+  .contact-page {
+    padding: 30px 15px;
+  }
+
+  .contact-page h1 {
+    display: none;
+  }
+
+  .contact-left h2,
+  .contact-right h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .contact-left strong,
+  .contact-right label {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .contact-left p,
+  .contact-left,
+  .contact-right input,
+  .contact-right textarea,
+  .contact-right form,
+  .contact-right button {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    padding: 12px;
+  }
+
+  .contact-right input::placeholder,
+  .contact-right textarea::placeholder {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .contact-right button {
+    padding: 12px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 40px;
+  }
 }

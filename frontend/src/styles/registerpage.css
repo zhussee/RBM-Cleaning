@@ -22,10 +22,7 @@
   font-size: 44px;
   margin: auto;
 }
-.error {
-  font-size: 16px;
-  margin: 0;
-}
+
 .register_subtitle {
   font-size: 20px;
   color: #5e5e5e;
@@ -54,7 +51,7 @@
 }
 
 .register_note {
-    width: 380px;
+  width: 380px;
   font-size: 16px;
   color: #fff;
   background-color: #4489ff;
@@ -62,7 +59,6 @@
   padding: 5px 10px;
   margin: auto;
   text-align: left;
-  
 }
 
 .register_checkbox-label {
@@ -79,7 +75,6 @@
   cursor: pointer;
 }
 
-
 .register_button {
   width: 400px;
   height: 35px;
@@ -89,6 +84,7 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 18px;
+  font-family: "Poppins", system-ui !important;
 }
 
 .register_button:hover {
@@ -101,39 +97,104 @@
   color: #5e5e5e;
 }
 
+.register_footer-link {
+  width: 100%;
+  max-width: 400px;
+}
+
 .register_footer-btn {
-    width: 400px;
-    height: 35px;
-    background-color: #fff;
-    color: #4489ff;
-    border: 2px solid #4489ff;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
+  width: 100%;
+  height: 35px;
+  background-color: #fff;
+  color: #4489ff;
+  border: 2px solid #4489ff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Poppins", system-ui !important;
+}
+
+.register_footer-btn:hover {
+  background-color: #4489ff;
+  color: #fff;
+}
+
+.register_password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.register_password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.register_eye-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.error {
+  font-size: 16px;
+  margin: 0;
+}
+
+@media (max-width: 516px) {
+  .register {
+    margin: 50px 10px;
   }
-  
-  .register_footer-btn:hover {
-    background-color: #4489ff;
-    color: #fff;
-  }
-  .register_password-wrapper {
-    position: relative;
+
+  .register_container {
+    padding: 30px 20px;
     width: 100%;
   }
-  
-  .register_password-wrapper input {
+
+  .register_title {
+    font-size: 24px;
+  }
+
+  .register_subtitle,
+  .register_input,
+  .register_button,
+  .register_footer-btn,
+  .register_footer-text,
+  .register_note,
+  .register_checkbox-label,
+  .error {
+    font-size: 13px;
+    display: block;
     width: 100%;
-    padding-right: 40px;
+    box-sizing: border-box;
   }
-  
-  .register_eye-icon {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    opacity: 0.7;
+
+  .register_note {
+    width: 100%;
+    padding: 6px 10px;
+    text-align: left;
   }
-  
+
+  .register_checkbox-label {
+    width: 100%;
+    line-height: 1.5;
+  }
+
+  .register_form {
+    gap: 14px;
+    margin-top: 30px;
+  }
+
+  .register_footer-link {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .register_footer-btn {
+    width: 100%;
+  }
+}
