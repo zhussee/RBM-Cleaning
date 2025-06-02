@@ -44,16 +44,23 @@ const CompanyPage = () => {
         <div className="company-left">
           <div className="company-card">
             <img
-              src={company.image ? `https://rbm-cleaning.kz/api/${company.image}` : companyImg}
+              src={
+                company.image
+                  ? `https://rbm-cleaning.kz/media/${company.image}`
+                  : companyImg
+              }
               alt={company.name}
-              className="company-img"
             />
           </div>
           <div className="company-rating">
             {[1, 2, 3, 4, 5].map((star) => (
               <img
                 key={star}
-                src={star <= Math.round(company.average_rating || 0) ? star_full : star_empty}
+                src={
+                  star <= Math.round(company.average_rating || 0)
+                    ? star_full
+                    : star_empty
+                }
                 alt="star"
               />
             ))}
@@ -74,12 +81,13 @@ const CompanyPage = () => {
               <div key={service.id} className="service-card">
                 <h3>{service.name_service}</h3>
                 <ul className="service-features">
-                  {service.description.split('\n').map((line, index) => (
+                  {service.description.split("\n").map((line, index) => (
                     <li key={index}>{line}</li>
                   ))}
                 </ul>
                 <p className="service-price">
-                  <strong>{service.price_per_m2} тг/м²</strong> — {service.lead_time} мин
+                  <strong>{service.price_per_m2} тг/м²</strong> —{" "}
+                  {service.lead_time} мин
                 </p>
                 <button onClick={() => handleSelectService(service.id)}>
                   Выбрать услугу

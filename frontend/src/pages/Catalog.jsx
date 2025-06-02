@@ -28,7 +28,10 @@ const Catalog = () => {
 
   const indexOfLastCompany = currentPage * companyPerPage;
   const indexOfFirstCompany = indexOfLastCompany - companyPerPage;
-  const currentcompany = filteredcompany.slice(indexOfFirstCompany, indexOfLastCompany);
+  const currentcompany = filteredcompany.slice(
+    indexOfFirstCompany,
+    indexOfLastCompany
+  );
   const totalPages = Math.ceil(filteredcompany.length / companyPerPage);
 
   return (
@@ -59,10 +62,17 @@ const Catalog = () => {
         {currentcompany.length > 0 ? (
           currentcompany.map((company) => (
             <div key={company.id} className="catalog-item">
-              <Link to={`/company/${company.id}`} className="catalog-image-link">
+              <Link
+                to={`/company/${company.id}`}
+                className="catalog-image-link"
+              >
                 <div className="catalog-image">
                   <img
-                    src={company.image ? `https://rbm-cleaning.kz/api${company.image}` : companyImg}
+                    src={
+                      company.image
+                        ? `https://rbm-cleaning.kz/media/${company.image}`
+                        : companyImg
+                    }
                     alt={company.name}
                   />
                   <div className="overlay">
@@ -80,7 +90,11 @@ const Catalog = () => {
                     {[1, 2, 3, 4, 5].map((star) => (
                       <img
                         key={star}
-                        src={star <= Math.round(company.average_rating || 0) ? star_full : star_empty}
+                        src={
+                          star <= Math.round(company.average_rating || 0)
+                            ? star_full
+                            : star_empty
+                        }
                         alt="star"
                       />
                     ))}
@@ -90,7 +104,10 @@ const Catalog = () => {
                   </span>
                 </div>
 
-                <Link to={`/company/${company.id}`} className="catalog-button-link">
+                <Link
+                  to={`/company/${company.id}`}
+                  className="catalog-button-link"
+                >
                   <button>Подробнее</button>
                 </Link>
               </div>
@@ -123,7 +140,9 @@ const Catalog = () => {
 
           <button
             className="arrow-btn"
-            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+            onClick={() =>
+              setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+            }
             disabled={currentPage === totalPages}
           >
             <img src={arrowRight} alt="Next" />
