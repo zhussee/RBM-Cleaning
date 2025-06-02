@@ -5,7 +5,8 @@ from .models import UserProfile
 from .serializers import UserProfileSerializer
 from backend_company.models import OrderClining
 from backend_company.serializers import OrderCliningSerializer
-
+import logging
+logger = logging.getLogger(__name__)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -44,7 +45,7 @@ def profile_view(request):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        print(serializer.errors)
+        logger.error(f"VALIDATION ERRORS: {serializer.errors}")
         return Response(serializer.errors, status=400)
 
 
