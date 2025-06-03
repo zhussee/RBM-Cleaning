@@ -25,12 +25,20 @@ class CompanyProfileUpdateSerializer(serializers.ModelSerializer):
         if password:
             instance.user.set_password(password)
 
+        request = self.context.get('request')
+        if request and hasattr(request, 'FILES'):
+            logo = request.FILES.get('logo')
+            if logo:
+                instance.logo = logo
+
         instance.user.save()
 
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
+
         instance.save()
         return instance
+
 
 
 class CompanyOrderSerializer(serializers.ModelSerializer):

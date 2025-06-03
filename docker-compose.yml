@@ -5,6 +5,8 @@ services:
     volumes:
       - ./static:/static
       - ./media:/media
+    env_file:
+      - .env
     networks:
       - dev
 
